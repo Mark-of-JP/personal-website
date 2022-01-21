@@ -18,9 +18,9 @@ const Home: NextPage = () => {
               </span>
             <span className='header-socials-container'>
               <a href='https://github.com/Mark-of-JP' target="_blank" rel="noopener noreferrer">
-                <Image src='github-icon.png'></Image></a>
+                <Image src='github-icon.png' alt=""></Image></a>
               <a href='https://www.linkedin.com/in/mark-of-jp-5406/' target="_blank" rel="noopener noreferrer">
-                <Image src='linkedin-logo.png'></Image></a>
+                <Image src='linkedin-logo.png' alt=""></Image></a>
             </span>
           </h1>
         </div>
