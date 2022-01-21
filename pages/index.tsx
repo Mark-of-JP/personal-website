@@ -1,12 +1,17 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import ProjectCard from '../components/ProjectCard'
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Homepage</title>
+      </Head>
+
       <header className="header-container" id="head">
         <div className='header-img' />
         <div className='header-text-container'>
@@ -18,9 +23,9 @@ const Home: NextPage = () => {
               </span>
             <span className='header-socials-container'>
               <a href='https://github.com/Mark-of-JP' target="_blank" rel="noopener noreferrer">
-                <Image src='github-icon.png' alt=""></Image></a>
+                <img src='/github-icon.png' alt=""></img></a>
               <a href='https://www.linkedin.com/in/mark-of-jp-5406/' target="_blank" rel="noopener noreferrer">
-                <Image src='linkedin-logo.png' alt=""></Image></a>
+                <img src='/linkedin-logo.png' alt=""></img></a>
             </span>
           </h1>
         </div>
@@ -48,22 +53,22 @@ const Home: NextPage = () => {
             <h2 className="main-section-title"><span>Featured Projects</span></h2>
             <div className='project-grid'>
               <ProjectCard 
-                img_path='projects/frc_match_sim.jpg' 
+                img_path='/frc_match_sim.jpg' 
                 title='FRC Match Simulator' 
                 desc='Utilizing a Random Forest, Nearest Neighbour, Logistic Regression and Naive Bayes classifier, I created a model that was 70% accurate in predicting the winner in an FRC match.'
                 project_link='https://github.com/Mark-of-JP/FRC-Match-Simulator/blob/master/FRC_Match_Simulator.ipynb'/>
               <ProjectCard 
-                img_path='projects/personal_website.jpg' 
+                img_path='/personal_website.jpg' 
                 title='Personal Website/Blog' 
                 desc='This website! Hosted on AWS Amplify and made with NextJS.'
                 project_link='https://github.com/Mark-of-JP/personal-website'/>
               <ProjectCard 
-                img_path='projects/everglad_messaging_frontend.jpg' 
+                img_path='/everglad_messaging_frontend.jpg' 
                 title='Everglade Messaging (API)' 
                 desc='A simple back-end for a messaging application using Flask and Websockets for real-time chatting.'
                 project_link='https://github.com/Mark-of-JP/Messaging-Api'/>
               <ProjectCard 
-                img_path='projects/ping_pong.jpg' 
+                img_path='/ping_pong.jpg' 
                 title='Pong Game' 
                 desc='Using Java with JFrame, I created a two-player Java executable version of Pong. Created for PointClickCare internship submission.'
                 project_link='https://github.com/Mark-of-JP/Pong-Project'/>

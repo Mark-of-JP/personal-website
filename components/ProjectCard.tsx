@@ -14,7 +14,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({img_path, title, desc
             <a href={project_link}  target="_blank" rel="noopener noreferrer">
                 <div className="info">
                     <span className="img-holder">
-                        <Image src={img_path} alt=""/>
+                        <img src={img_path} alt=""/>
                         <span className="description-container"><span className="description">{desc}</span></span>
                     </span>
                     <span className="name">{title}</span>

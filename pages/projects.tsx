@@ -1,8 +1,13 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 
 const Projects: NextPage = () => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Under Construction...</title>
+      </Head>
+
       <header className="header-container">
         <div className='header-img parallax' parallax-speed="2" />
         <div className='header-text-container'>
@@ -17,7 +22,7 @@ const Projects: NextPage = () => {
 
         </div>
       </nav>
-    </div>
+    </>
   )
 }
 
