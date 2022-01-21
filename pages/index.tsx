@@ -29,8 +29,8 @@ const Home: NextPage = () => {
       <nav className="navbar">
         <div className='navbar-container'>
           <ul>
-          <Link href="/"><li>Home</li></Link>
-            <Link href="/projects"><li>Blog</li></Link>
+          <Link href="/" passHref><li>Home</li></Link>
+            <Link href="/projects" passHref><li>Blog</li></Link>
             <a href="Mark_JP_Resume.pdf" download="MarkJP_Resume.pdf"><li>Resume</li></a>
           </ul>
         </div>
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
               <p>
                 - Developed machine learning model using Random Forest regressor, Support Vector regressor, Gradient Boosted regressor and Naive Bayes regressor to improve dynamic questionnaire algorithm by reducing the amount of questions asked on average <br/>
                 - Assisted researchers with statistical tools and developed scripts for analysis such as model selection under multiple imputation <br/>
-                - Monitored and maintained the processes surrounding the data and ensure there weren't any problems in the dataset
+                - Monitored and maintained the processes surrounding the data and ensure there weren&apos;t any problems in the dataset
               </p>
             </div>
 
