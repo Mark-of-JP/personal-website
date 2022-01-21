@@ -53,22 +53,22 @@ const Home: NextPage = () => {
             <h2 className="main-section-title"><span>Featured Projects</span></h2>
             <div className='project-grid'>
               <ProjectCard 
-                img_path='/frc_match_sim.jpg' 
+                img_path='/projects/frc_match_sim.png' 
                 title='FRC Match Simulator' 
                 desc='Utilizing a Random Forest, Nearest Neighbour, Logistic Regression and Naive Bayes classifier, I created a model that was 70% accurate in predicting the winner in an FRC match.'
                 project_link='https://github.com/Mark-of-JP/FRC-Match-Simulator/blob/master/FRC_Match_Simulator.ipynb'/>
               <ProjectCard 
-                img_path='/personal_website.jpg' 
+                img_path='/projects/personal_website.png' 
                 title='Personal Website/Blog' 
                 desc='This website! Hosted on AWS Amplify and made with NextJS.'
                 project_link='https://github.com/Mark-of-JP/personal-website'/>
               <ProjectCard 
-                img_path='/everglad_messaging_frontend.jpg' 
+                img_path='/projects/everglad_messaging_frontend.png' 
                 title='Everglade Messaging (API)' 
                 desc='A simple back-end for a messaging application using Flask and Websockets for real-time chatting.'
                 project_link='https://github.com/Mark-of-JP/Messaging-Api'/>
               <ProjectCard 
-                img_path='/ping_pong.jpg' 
+                img_path='/projects/ping_pong.png' 
                 title='Pong Game' 
                 desc='Using Java with JFrame, I created a two-player Java executable version of Pong. Created for PointClickCare internship submission.'
                 project_link='https://github.com/Mark-of-JP/Pong-Project'/>
