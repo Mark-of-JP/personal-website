@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import React, { FunctionComponent } from "react";
 
 export type ProjectCardProps = {
@@ -14,7 +14,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({img_path, title, desc
             <a href={project_link}  target="_blank" rel="noopener noreferrer">
                 <div className="info">
                     <span className="img-holder">
-                        <img src={img_path} alt=""/>
+                        <Image src={img_path} alt=""/>
                         <span className="description-container"><span className="description">{desc}</span></span>
                     </span>
                     <span className="name">{title}</span>

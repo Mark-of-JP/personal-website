@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import ProjectCard from '../components/ProjectCard'
@@ -17,9 +18,9 @@ const Home: NextPage = () => {
               </span>
             <span className='header-socials-container'>
               <a href='https://github.com/Mark-of-JP' target="_blank" rel="noopener noreferrer">
-                <img src='github-icon.png'></img></a>
+                <Image src='github-icon.png'></Image></a>
               <a href='https://www.linkedin.com/in/mark-of-jp-5406/' target="_blank" rel="noopener noreferrer">
-                <img src='linkedin-logo.png'></img></a>
+                <Image src='linkedin-logo.png'></Image></a>
             </span>
           </h1>
         </div>
