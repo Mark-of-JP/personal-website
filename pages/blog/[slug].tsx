@@ -68,6 +68,16 @@ const BlogPage: NextPage<PageProps> = ({frontmatter, content}) => {
             </div>
         </div>
       </main>
+
+      <footer>
+        <div className='footer-container'>
+          <h3>Contact</h3>
+          <p>
+            +1 (905)-807-3667 <br/>
+            mark.of.sanchez@gmail.com
+          </p>
+        </div>
+      </footer>
     </>
   )
 }

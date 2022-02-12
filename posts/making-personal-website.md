@@ -1,8 +1,60 @@
 ---
 title: 'Making a Personal Website/Blog'
 date: 'February 11 2022'
-excerpt: 'First Blog post/still being made'
-post_image: '/posts/images/img1.jpg'
+excerpt: 'Thinking about if you should make a personal website and how to do it? Within this blog, I go through my reasoning, decisions and technologies I used to make my personal website.'
+post_image: '/posts/images/next-js-logo.jpeg'
 ---
 
-## In Construction
+# Why should you even make a personal website/blog
+
+For those of you that are curious, my personal website can be found [here](https://markjps.com).
+
+Before we get into how I made my personal website and the decisions I made, we should first get into why you should make one. There are many different benefits of making your own personal website/blog but I will go through my top 2 reasons.
+
+## It looks great on a resume
+
+If you are like me and are hoping to be hired for internships/jobs, personal websites are a great personal project to show off your skills. Many companies have many different processes of hiring their candidates. Some of them have engineers/team members look at your resumes while others have recruiters or human resources look at them. A personal website is a great way to appeal to both groups as the engineers will acknowledge the effort and technology you utilized to create the project while human resources will be impressed by the visual display of it.
+
+## It is a great learning experience
+
+Personal websites  surprisingly take a lot of different technologies to build depending on how much you want to do manually. This is especially true if you are building a blog alongside your website since you then need to start thinking about CMSs (Content Manage System). The amount of effort and the amount of stuff you want to learn is genuinely up to you. There are so many free and cheap technologies that streamline some aspects of website creation! If you don't like doing front end stuff then you can just download some free css templates. If you wanna focus purely on SEO and content creation then Jekyll might be what you need. If you want to use some AWS to streamline your process then AWS Amplify or AWS S3 will be very useful. Maybe you wanna do almost everything from scratch and still use AWS, well then AWS EC2 is your friend. If you don't want to spend any money then services like Heroku and Github pages might be useful for you. As you can see there are a lot of technologies and different facets of development that you can focus on!
+
+# How I made my personal website
+
+## Next.JS (vs. Pure React.JS vs. Gatsby vs. Jekyll)
+
+This is the main framework that I am using. Next.JS is a framework built around the popular React.JS and it streamlined many of the problems I had with React.JS. Creating and navigating between pages in Next.JS is in intuitive and easy. You don't even need to worry too much about Redux though the option is still available for you. My mine gripe with React.JS was that there was too much boilerplate code required to get basic functionality. You lose very little flexibility and this flexibility pure React.JS give you isn't really required for a personal project unless you are trying to do something very involved.
+
+This is also one of the reasons why I chose Next.JS over Gatsby. Creating and navigating through different pages in Gatsby required knowledge in GraphQL as most other functionality in Gatsby. While this development process is better than pure React, there is still much more boilerplate than Next.JS. In Next.JS all you need to do is create a new file in the page folder. That is it! I am also not the biggest fan of GraphQL. If you love GraphQL then I definitely recommend Gatsby.
+
+Jekyll was another framework I looked into and decided against. Jekyll is the most unique one out of the bunch as it isn't based off of React. Jekyll basically just lets you create static pages purely through some markdown and some css. It is a very streamlined process and it allows you to create nice looking websites in minutes so you can focus purely on your content. The problem is that it is too streamlined for me. If you are looking to purely create a personal website quickly that looks nice then this is definitely the choice for you. But personally, I wanted to be able to show a bit more of my technical ability if someone looked at my code. I also learned a lot more about website development through Next.JS than I would have with Jekyll.
+
+Next.JS isn't all perfect though. There are some compromises you have to make. The main one is that Next.JS is rendered server side. It is meant to be hosted on a server unlike static website generators like Jekyll and Gatsby. This means that you will not be able to use some services such as Github pages or AWS S3 as they only support static websites. You will need to host your website on a more involved and potentially more expensive service like AWS Amplify which I am using. One benefit of this though is that Next.JS has pre-built support to streamline the process of making api's. So if you ever want to use your personal website as host to a future api project of yours, it is easy and almost hassle free. Hopefully in the future I can utilize this flexibility for a data science project.
+
+## TypeScript (vs. JavaScript)
+
+This one was a bit of a tricky choice on my part. You don't lose any flexibility or functionaly if you choose one over the other. TypeScript serves solely as a superset of JavaScript. TypeScript is basically a lint that won't allow you to compile unless you follow it. For a project as small as a personal website, TypeScript might actually more time consuming than beneficial as it requires a lot more set up. That being said, a lot of larger companies are utilizing the power of TypeScript and switching from TypeScript to JavaScript is easier than switching from JavaScript to TypeScript in my opinion. I chose to use TypeScript because Next.JS has pre-built in support and I have yet to build a full project in TypeScript. I would be lying if I said that TypeScript didn't add to my development time but I would also be lying if I said I didn't learn a lot.
+
+## AWS Amplify (vs. Heroku vs. AWS EC2)
+
+My personal website is currently being hosted on AWS Amplify and there are many reasons why I have made this choice. First of all, since I wanted to use the SSR (server-side rendering) powers of Next.JS, this immediately forfeited me from website hosting services such as AWS S3 and Github pages as they only supported static website. So I had to look into website hosting services that supported Next.JS.
+
+Heroku is a service I have used many times for my own personal projects. One of the biggest benefits was that is was free and was very easy to use. You could hook up your heroku application to a github repository and heroku would deploy whenever you pushed your code. My main problem with Heroku was loading times. If your website is not being utilized then Heroku puts your website to sleep to save up on processing. The problem with this is that if you try and visit your website while it's asleep, it will initially take a few minutes to load. This is may turn off some employers who try and visit your website for the first time especially during an interview. This is also horrible for SEO. One of the characteristics Google uses to judge how high they should rank your website on a search result is loading speed. The faster your site loads, the higher Google ranks it. This is especially detrimental if you wanted to attach a blog to your site since good SEO is one of the ways your blog can be discovered.
+
+On the other end of the spectrum is AWS EC2. This is essentially a barebones server given to you by Amazon. If you want a more powerful server then you better be ready to cough up the big bucks but luckily AWS EC2 (like many of the other products on Amazon) have a free tier. Here you can use a very simple one core server for little to no money. The reason why I didn't decide to go this route was because there was too much to do. Everything would be up to me to handle. From using nginx, managing credentials, SSL, and processing requests, I would be in charge of making sure everything works. While this is a great project and an amazing learning opportunity, it is more effort and time than I have available. I also don't want to rely on my skills to keep my blog up when a group of very capable developers have already solved all of my problems within another Amazon service. This also ensures that I have an free tier AWS EC2 server free for a future project of mine. With a barebones and flexible AWS EC2 server, I can use it to run scripts that I don't want to run on my personal computer. For example, training a large neural network can take countless hours of processing power. Instead of using my own pc, I can run the script on the server and check back on it in a few days. There are also some APIs that rate limit request. I can run those scripts on the server until I have made all of my desired requests. So in summary, while AWS EC2 is every powerful, it might be overkill for a personal website and can be better utilized for a more intense project.
+
+Luckily there is a service that gives you the best of both worlds. AWS Amplify is a service made to launch full-stack applications. It has the github integration like Heroku and introduces you to the AWS ecosystem. This is especially useful if you want to or already have Amazon register and handle all of your domains. AWS Amplify also easily interfaces with the other AWS services so if you ever want to use things such as DynamoDB, you can easily add it to your application. You can also put AWS on your resume if you feel confident! AWS Amplify also comes with a free tier and charges you for build time and amount of memory served. While this may seem scary, if your site isn't visited too often you can expect easily less than $2 a month in fees. You also get the reliability of Amazon servers on your side.
+
+## Markdown (and other CMS)
+
+Last thing you want to look into if you want to create a blog is how you are gonna to actually post and store these blogs on your website. This is where CMS (Content Management Systems) come into play. A CMS is effectively a process or a system that you use to create your blogs. I highly doubt you want to code a new page for every blog post you want to make. Intuitively, there is gonna be a lot of repeat code when you do so. You can make your own custom CMS from scratch, and more power to you if you do, but like I've shown above as with most things, someone has probably already made a service that makes it easier. If there isn't then there is a business idea for you!
+
+If your goal is purely to create a blog and not create too much from scratch then the technologies I listed up above may not be for you. Instead, WordPress is the industry standard and for good reason. It is easy to use and adding new content is as easy as typing up your desired blog and inserting it into your WordPress template. But we aren't here to create just a blog so WordPress was not the service I went with.
+
+To create these blogs I use markdown along with the marked npm package. The marked package is a very powerful package that turns markdown into html. All I need to do is create a markdown file, write my blog there and my website programmatically creates the page and html through Next.JS and marked! The functionality was surprisingly easy and since my blog is written in markdown I can easily post this blog on other websites, like Medium for SEO reasons.
+
+# Summary
+
+In conclusion, personal websites/blogs are a great time sink especially if you want to show off your skills to future employers and friends. Next.JS, AWS Amplify and markdown was exactly what I needed to actually create my website quickly and effectively. It is the perfect combination of flexibility and reliability for me personally. This tech stack was one of the easiest and most effective I have ever worked with.
+
+Who knows, you may even be able to turn your blog into a business. At the very least, you will learn a whole bunch of new technologies and will actually have something tangible to show for all the effort you put in.
