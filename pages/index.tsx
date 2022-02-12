@@ -1,15 +1,24 @@
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+
 import type { NextPage } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 
 import ProjectCard from '../components/ProjectCard'
+import BlogCard, { BlogSnippetType } from '../components/BlogCard'
+import { sortByDate } from '../utils/utils'
 
-const Home: NextPage = () => {
+const Home: NextPage<{posts: Array<BlogSnippetType>}> = ({posts}) => {
   return (
     <>
       <Head>
         <title>Homepage</title>
+        <meta itemProp='name' content='Mark JP Sanchez Portfolio' />
+        <meta itemProp='description' content='Hey! My name is Mark JP Sanchez and I am Data Science and Computer Science student at the University of Toronto. <br/>
+                I have studied and worked with Neural Networks, Machine Learning, Parallel Programming, Data Analysis and Linux. For tech-stack, I have worked with Python (NumPy, PyTorch, Tensorflow), C/C++ (OpenMP, MPI), AWS (Amplify, EC2) and JavaScript (NextJS, React, Node).<br/>
+                Thank you for checking out my site and hope you enjoy your stay!' />
       </Head>
 
       <header className="header-container" id="head">
@@ -35,13 +44,13 @@ const Home: NextPage = () => {
         <div className='navbar-container'>
           <ul>
           <Link href="/" passHref><li>Home</li></Link>
-            <Link href="/projects" passHref><li>Blog</li></Link>
+            <Link href="/blog" passHref><li>Blog</li></Link>
             <a href="Mark_JP_Resume.pdf" download="MarkJP_Resume.pdf"><li>Resume</li></a>
           </ul>
         </div>
       </nav>
 
-      <main id="main" className='main=container'>
+      <main id="main">
         <div className='main-content-container'>
           <div className='main-about-container top-margin'>
               <p>Hey! My name is Mark JP Sanchez and I am Data Science and Computer Science student at the University of Toronto. <br/>
@@ -103,7 +112,11 @@ const Home: NextPage = () => {
           <div className="top-margin">
             <h2 className="main-section-title"><span>Recent Blog Posts</span></h2>
 
-            <h1>Under Construction...</h1>
+            <div className='blog-card-container'>
+              {posts.map((post, index) => (
+                <BlogCard blog_snippet={post} key={index} />
+              ))}
+            </div>
           </div>
 
         </div>
@@ -123,3 +136,27 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export async function getStaticProps() {
+
+  const files = fs.readdirSync(path.join('posts'))
+  const posts = (files.map(filename => {
+
+    const slug = filename.replace('.md', '')
+
+    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+
+    const { data:frontmatter } = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter
+    }
+  }))
+
+  return {
+    props: {
+      posts: posts.sort(sortByDate).slice(0, 3)
+    }
+  }
+}
