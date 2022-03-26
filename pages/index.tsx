@@ -77,10 +77,10 @@ const Home: NextPage<{posts: Array<BlogSnippetType>}> = ({posts}) => {
                 desc='A simple back-end for a messaging application using Flask and Websockets for real-time chatting.'
                 project_link='https://github.com/Mark-of-JP/Messaging-Api'/>
               <ProjectCard 
-                img_path='/projects/ping_pong.png' 
-                title='Pong Game' 
-                desc='Using Java with JFrame, I created a two-player Java executable version of Pong. Created for PointClickCare internship submission.'
-                project_link='https://github.com/Mark-of-JP/Pong-Project'/>
+                img_path='/projects/stats_portfolio.png' 
+                title='STA303 Portfolio' 
+                desc='A portfolio project created for the University of Toronto Statistics class. Demonstrates an overview of my knowledge and understanding with stats concepts and technologies.'
+                project_link='https://github.com/Mark-of-JP/STA303-Portfolio/blob/main/sta303-w22-portfolio.pdf'/>
             </div>
           </div>
 
