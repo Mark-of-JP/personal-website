@@ -89,7 +89,13 @@ const Home: NextPage<{posts: Array<BlogSnippetType>}> = ({posts}) => {
             
             <div className='work-experience'>
               <h2>Energy Trader - Dynasty Power Inc. (May 2022 - August 2023)</h2>
-              <p>- Incoming position in the upcoming year!</p>
+              <p>
+                - Tagged and bid energy and transmission rights <br/>
+                - Developed and scheduled scripts which scraped data off of public resources and stored info into company databases <br/>
+                - Developed tools using VBA, Python, and R which allowed traders to easily look at desired data and statistics in real time <br/>
+                - Made automated daily scripts which sent emails about current market conditions <br/>
+                - Produced machine learning models to predict energy and gas prices
+              </p>
             </div>
             <div className='work-experience'>
               <h2>STATA Developer - University Health Network [KHERG] (September 2020 - Present)</h2>
